@@ -1,6 +1,6 @@
 # outgo
 
-A Clojure library designed to ... well, that part is up to you.
+Outgo for my girlfriend using
 
 ## Usage
 
