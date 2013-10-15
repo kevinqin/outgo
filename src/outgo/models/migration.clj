@@ -38,6 +38,7 @@
 
 (defn -main []
   (print "Creating database structure...") (flush)
+  (drop-table)
   (create-users)
   (sql/with-connection (System/getenv "DATABASE_URL")
     (sql/insert-record :users

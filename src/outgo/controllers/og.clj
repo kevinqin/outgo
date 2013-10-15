@@ -6,14 +6,18 @@
             [outgo.models.og :as model]))
 
 (defn index []
-  (view/index (model/all)))
+  (view/index (model/today-outgo)))
+
+(defn histories []
+  (view/histories (model/all)))
 
 (defn create [kevin jessica]
   (do
     (model/create kevin)
     (model/create jessica))
-  (ring/redirect "/"))
+  (ring/redirect "/histories"))
 
 (defroutes routes
   (GET "/" [] (index))
+  (GET "/histories" [] (histories))
   (POST "/" [kevin jessica] (create kevin jessica)))
